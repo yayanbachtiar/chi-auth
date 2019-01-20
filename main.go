@@ -43,6 +43,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"mama-chi/src/routers"
 	"math/rand"
 	"net/http"
 	"strings"
@@ -66,9 +67,7 @@ func main() {
 	r.Use(middleware.URLFormat)
 	r.Use(render.SetContentType(render.ContentTypeJSON))
 
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("root."))
-	})
+	r.Mount("/", routers.Index())
 
 	r.Get("/ping", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("pong"))
@@ -97,17 +96,16 @@ func main() {
 
 	// Mount the admin sub-router, which btw is the same as:
 	// r.Route("/admin", func(r chi.Router) { admin routes here })
-	r.Mount("/admin", adminRouter())
 
 	// Passing -routes to the program will generate docs for the above
 	// router definition. See the `routes.json` file in this folder for
 	// the output.
 	if *routes {
-		// fmt.Println(docgen.JSONRoutesDoc(r))
-		fmt.Println(docgen.MarkdownRoutesDoc(r, docgen.MarkdownOpts{
-			ProjectPath: "github.com/go-chi/chi",
-			Intro:       "Welcome to the chi/_examples/rest generated docs.",
-		}))
+		fmt.Println(docgen.JSONRoutesDoc(r))
+		// fmt.Println(docgen.MarkdownRoutesDoc(r, docgen.MarkdownOpts{
+		// 	ProjectPath: "github.com/go-chi/chi",
+		// 	Intro:       "Welcome to the chi/_examples/rest generated docs.",
+		// }))
 		return
 	}
 
@@ -216,34 +214,6 @@ func DeleteArticle(w http.ResponseWriter, r *http.Request) {
 	}
 
 	render.Render(w, r, NewArticleResponse(article))
-}
-
-// A completely separate router for administrator routes
-func adminRouter() chi.Router {
-	r := chi.NewRouter()
-	r.Use(AdminOnly)
-	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("admin: index"))
-	})
-	r.Get("/accounts", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("admin: list accounts.."))
-	})
-	r.Get("/users/{userId}", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte(fmt.Sprintf("admin: view user id %v", chi.URLParam(r, "userId"))))
-	})
-	return r
-}
-
-// AdminOnly middleware restricts access to just administrators.
-func AdminOnly(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		isAdmin, ok := r.Context().Value("acl.admin").(bool)
-		if !ok || !isAdmin {
-			http.Error(w, http.StatusText(http.StatusForbidden), http.StatusForbidden)
-			return
-		}
-		next.ServeHTTP(w, r)
-	})
 }
 
 // paginate is a stub, but very possible to implement middleware logic
