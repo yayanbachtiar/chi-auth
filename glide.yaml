@@ -8,3 +8,7 @@ import:
   version: ~1.0.5
 - package: github.com/go-chi/render
   version: ~1.0.1
+- package: github.com/gbrlsnchs/jwt
+  version: ^2.0.0
+- package: github.com/gookit/config
+  version: ^2.0.2

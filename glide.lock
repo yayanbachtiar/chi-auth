@@ -1,12 +1,51 @@
-hash: 6830d6281c46beeef2bf3557e63b92df39442c1eb52c142fa37ace4db7a115bd
-updated: 2019-01-17T17:01:28.466873+07:00
+hash: 5e9fa9c2f44fccc418c8fd7de2e5cafb1cf455c908d8e5d495dc669cf3bd2aff
+updated: 2019-01-25T17:39:06.865331+07:00
 imports:
+- name: github.com/gbrlsnchs/jwt
+  version: 808efa0714baff8c25cc65ef8681966740beb9f9
 - name: github.com/go-chi/chi
-  version: e95203758b2a6ec24a8e97124d5719ffe5ec1374
+  version: 1a6bb108ccf279c8dac6f9bad857d773b4f9b421
   subpackages:
   - middleware
 - name: github.com/go-chi/docgen
   version: c94a1e40c06f53a447a809bad19c5f3c4047acc5
 - name: github.com/go-chi/render
   version: 3215478343fbc559bd3fc08f7031bb134d6bdad5
+- name: github.com/go-sql-driver/mysql
+  version: 72cd26f257d44c1114970e19afddcd812016007e
+- name: github.com/gookit/config
+  version: 4e63bfd501c3183844f7ecb8911798c599c6747c
+- name: github.com/gookit/ini
+  version: 2e4e8faa66904bf17aeb6d4bfa6d693b377e9c3a
+- name: github.com/jinzhu/gorm
+  version: 472c70caa40267cb89fd8facb07fe6454b578626
+  subpackages:
+  - dialects/mysql
+  - dialects/postgres
+- name: github.com/jinzhu/inflection
+  version: 04140366298a54a039076d798123ffa108fff46c
+- name: github.com/joho/godotenv
+  version: 23d116af351c84513e1946b527c88823e476be13
+- name: github.com/kataras/iris
+  version: 32d735f0f10a7bd4b7228bf03e3a6e2b5346872a
+  subpackages:
+  - middleware/basicauth
+- name: github.com/lib/pq
+  version: 4ded0e9383f75c197b3a2aaa6d590ac52df6fd79
+  subpackages:
+  - hstore
+  - oid
+- name: github.com/mongodb/mongo-go-driver
+  version: 3cfdc9ffcf780eede57d27ec26a3edad4c9ab6a9
+  subpackages:
+  - mongo
+- name: golang.org/x/crypto
+  version: 5295e8364332db77d75fce11f1d19c053919a9c9
+  subpackages:
+  - bcrypt
+  - blowfish
+- name: google.golang.org/appengine
+  version: e9657d882bb81064595ca3b56cbe2546bbabf7b1
+  subpackages:
+  - cloudsql
 testImports: []
