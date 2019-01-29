@@ -60,8 +60,8 @@ func JwtMidleware(next http.Handler) http.Handler {
 	})
 }
 
-// New middleware
-func New(realm string, credentials map[string]string) func(http.Handler) http.Handler {
+// BasicAuth middleware
+func BasicAuth(realm string, credentials map[string]string) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
