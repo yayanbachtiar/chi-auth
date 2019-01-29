@@ -1,5 +1,5 @@
-hash: 5e9fa9c2f44fccc418c8fd7de2e5cafb1cf455c908d8e5d495dc669cf3bd2aff
-updated: 2019-01-25T17:39:06.865331+07:00
+hash: 4c38075faa8bcef283343817058da9a67e51af82f32bdea29a13c913c9685a0c
+updated: 2019-01-29T14:27:22.22537+07:00
 imports:
 - name: github.com/gbrlsnchs/jwt
   version: 808efa0714baff8c25cc65ef8681966740beb9f9
@@ -15,8 +15,6 @@ imports:
   version: 72cd26f257d44c1114970e19afddcd812016007e
 - name: github.com/gookit/config
   version: 4e63bfd501c3183844f7ecb8911798c599c6747c
-- name: github.com/gookit/ini
-  version: 2e4e8faa66904bf17aeb6d4bfa6d693b377e9c3a
 - name: github.com/jinzhu/gorm
   version: 472c70caa40267cb89fd8facb07fe6454b578626
   subpackages:
@@ -26,19 +24,11 @@ imports:
   version: 04140366298a54a039076d798123ffa108fff46c
 - name: github.com/joho/godotenv
   version: 23d116af351c84513e1946b527c88823e476be13
-- name: github.com/kataras/iris
-  version: 32d735f0f10a7bd4b7228bf03e3a6e2b5346872a
-  subpackages:
-  - middleware/basicauth
 - name: github.com/lib/pq
   version: 4ded0e9383f75c197b3a2aaa6d590ac52df6fd79
   subpackages:
   - hstore
   - oid
-- name: github.com/mongodb/mongo-go-driver
-  version: 3cfdc9ffcf780eede57d27ec26a3edad4c9ab6a9
-  subpackages:
-  - mongo
 - name: golang.org/x/crypto
   version: 5295e8364332db77d75fce11f1d19c053919a9c9
   subpackages:
@@ -48,4 +38,11 @@ imports:
   version: e9657d882bb81064595ca3b56cbe2546bbabf7b1
   subpackages:
   - cloudsql
+- name: gopkg.in/mgo.v2
+  version: 9856a29383ce1c59f308dd1cf0363a79b5bef6b5
+  subpackages:
+  - bson
+  - internal/json
+  - internal/sasl
+  - internal/scram
 testImports: []
