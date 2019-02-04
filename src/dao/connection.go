@@ -8,10 +8,9 @@ import (
 	"github.com/joho/godotenv"
 
 	"github.com/jinzhu/gorm"
-	mgo "gopkg.in/mgo.v2"
-
 	_ "github.com/jinzhu/gorm/dialects/mysql"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
+	mgo "gopkg.in/mgo.v2"
 )
 
 var postgreDb *gorm.DB

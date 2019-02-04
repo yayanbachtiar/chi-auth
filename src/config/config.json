@@ -1,0 +1,15 @@
+{
+    "APP_ENV": "dev",
+    "mongo": {
+        "host": "127.0.0.1",
+        "port": "37777",
+        "db": "mm_catering",
+        "url" : "mongodb://127.0.0.1:27017/mm_catering"
+    },
+    "maria": {
+        "host": "127.0.0.1",
+        "port": 3308,
+        "db": "mm_catering",
+        "url" : "root:qawsed1q2w3e@/127.0.0.1:3308/mm_catering?charset=utf8&parseTime=True&loc=Local"
+    }
+}

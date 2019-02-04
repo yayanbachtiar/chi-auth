@@ -1,5 +1,5 @@
-hash: 4c38075faa8bcef283343817058da9a67e51af82f32bdea29a13c913c9685a0c
-updated: 2019-01-29T14:27:22.22537+07:00
+hash: c2c7c353978fb71e91307491bca0072f1fe019195e3fcda23197c9049c6d5ac2
+updated: 2019-02-04T13:50:09.740588+07:00
 imports:
 - name: github.com/gbrlsnchs/jwt
   version: 808efa0714baff8c25cc65ef8681966740beb9f9
@@ -24,11 +24,31 @@ imports:
   version: 04140366298a54a039076d798123ffa108fff46c
 - name: github.com/joho/godotenv
   version: 23d116af351c84513e1946b527c88823e476be13
+- name: github.com/lestrrat-go/strftime
+  version: 8b31f9c59b0feb56c456ce49a7b3d2b2e93a6f18
 - name: github.com/lib/pq
   version: 4ded0e9383f75c197b3a2aaa6d590ac52df6fd79
   subpackages:
   - hstore
   - oid
+- name: github.com/pkg/errors
+  version: ffb6e22f01932bf7ac35e0bad9be11f01d1c8685
+- name: github.com/uber-go/zap
+  version: ff33455a0e382e8a81d14dd7c922020b6b5e7982
+- name: github.com/utahta/go-cronowriter
+  version: 4443026afcbf6c4964071a925988edac04af97fb
+- name: go.uber.org/atomic
+  version: 1ea20fb1cbb1cc08cbd0d913a96dead89aa18289
+- name: go.uber.org/multierr
+  version: 3c4937480c32f4c13a875a1829af76c98ca3d40a
+- name: go.uber.org/zap
+  version: ff33455a0e382e8a81d14dd7c922020b6b5e7982
+  subpackages:
+  - buffer
+  - internal/bufferpool
+  - internal/color
+  - internal/exit
+  - zapcore
 - name: golang.org/x/crypto
   version: 5295e8364332db77d75fce11f1d19c053919a9c9
   subpackages:

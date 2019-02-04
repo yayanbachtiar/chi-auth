@@ -86,6 +86,7 @@ func BasicAuth(realm string, credentials map[string]string) func(http.Handler) h
 	}
 }
 func unauthorized(w http.ResponseWriter, realm string) {
+	helper.LogErr("access without basic-auth")
 	w.Header().Add("WWW-Authenticate", fmt.Sprintf(`Basic realm="%s"`, realm))
 	w.WriteHeader(http.StatusUnauthorized)
 }

@@ -5,8 +5,21 @@ import (
 	"strconv"
 
 	"github.com/go-chi/render"
+	cronowriter "github.com/utahta/go-cronowriter"
 	"golang.org/x/crypto/bcrypt"
 )
+
+// LogInfo write info
+func LogInfo(log string) {
+	w1 := cronowriter.MustNew("./tmp/example.log.%Y%m%d")
+	w1.Write([]byte(log + "\n"))
+}
+
+// LogErr write info
+func LogErr(log string) {
+	w2 := cronowriter.MustNew("./tmp/internal_error.log.%Y%m%d")
+	w2.Write([]byte(log + "\n"))
+}
 
 // HashPassword create pass
 func HashPassword(password string) (string, error) {

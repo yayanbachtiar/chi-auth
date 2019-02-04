@@ -28,6 +28,7 @@ func authRouter() chi.Router {
 	r := chi.NewRouter()
 	r.Use(middleware.BasicAuth("MyRealm", pass))
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
+		helper.LogInfo("log Index")
 		data := services.GetAllClient()
 		render.JSON(w, r, data)
 	})

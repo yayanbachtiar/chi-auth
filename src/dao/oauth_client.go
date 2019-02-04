@@ -11,7 +11,5 @@ func GetAllClient() []models.Client {
 	if err := mongoDb.C("oauth_clients").Find(nil).All(&oauthClient); err != nil {
 		log.Fatalf("errror %v", err)
 	}
-	log.Println(oauthClient)
-	// mariaDb.Find(&oauthClient)
 	return oauthClient
 }
