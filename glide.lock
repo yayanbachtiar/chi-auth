@@ -1,5 +1,5 @@
-hash: c2c7c353978fb71e91307491bca0072f1fe019195e3fcda23197c9049c6d5ac2
-updated: 2019-02-04T13:50:09.740588+07:00
+hash: 4b12a1d0a1740202438f8f0d05a1cc4e894c3d2eba9297066269481b965a46d0
+updated: 2019-02-20T10:35:58.027181+07:00
 imports:
 - name: github.com/gbrlsnchs/jwt
   version: 808efa0714baff8c25cc65ef8681966740beb9f9
@@ -7,6 +7,8 @@ imports:
   version: 1a6bb108ccf279c8dac6f9bad857d773b4f9b421
   subpackages:
   - middleware
+- name: github.com/go-chi/cors
+  version: dba6525398619dead495962a916728e7ee2ca322
 - name: github.com/go-chi/docgen
   version: c94a1e40c06f53a447a809bad19c5f3c4047acc5
 - name: github.com/go-chi/render
@@ -37,18 +39,8 @@ imports:
   version: ff33455a0e382e8a81d14dd7c922020b6b5e7982
 - name: github.com/utahta/go-cronowriter
   version: 4443026afcbf6c4964071a925988edac04af97fb
-- name: go.uber.org/atomic
-  version: 1ea20fb1cbb1cc08cbd0d913a96dead89aa18289
-- name: go.uber.org/multierr
-  version: 3c4937480c32f4c13a875a1829af76c98ca3d40a
 - name: go.uber.org/zap
   version: ff33455a0e382e8a81d14dd7c922020b6b5e7982
-  subpackages:
-  - buffer
-  - internal/bufferpool
-  - internal/color
-  - internal/exit
-  - zapcore
 - name: golang.org/x/crypto
   version: 5295e8364332db77d75fce11f1d19c053919a9c9
   subpackages:

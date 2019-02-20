@@ -10,6 +10,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/render"
+	"github.com/rs/cors"
 
 	"github.com/go-chi/chi"
 )
@@ -17,8 +18,24 @@ import (
 // Index index
 func Index() chi.Router {
 	r := chi.NewRouter()
+	corss := cors.New(cors.Options{
+		// 	// AllowOriginFunc:  allowOriginFunc,
+		AllowedOrigins:   []string{"*"},
+		AllowedMethods:   []string{"POST", "GET", "PUT", "DELETE", "OPTIONS"},
+		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
+		AllowCredentials: true,
+		MaxAge:           300, // Maximum value not ignored by any of major browsers
+	})
+	r.Use(corss.Handler)
 	r.Mount("/api/v1/auth", authRouter())
 	return r
+}
+func allowOriginFunc(r *http.Request, origin string) bool {
+	if origin == "http://example.com" {
+		return true
+	}
+
+	return false
 }
 
 var pass = services.GetAllClient()

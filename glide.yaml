@@ -20,3 +20,5 @@ import:
 - package: github.com/lestrrat-go/strftime
 - package: go.uber.org/zap
   version: ^1.9.1
+- package: github.com/go-chi/cors
+  version: ^1.0.0

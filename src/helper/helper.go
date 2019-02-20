@@ -77,4 +77,4 @@ func ErrInvalidRequest(err error) render.Renderer {
 var ErrNotFound = &ErrResponse{HTTPStatusCode: 404, StatusText: "Resource not found."}
 
 //ErrForbiden const
-var ErrForbiden = &ErrResponse{HTTPStatusCode: http.StatusForbidden, StatusText: "Resource not found."}
+var ErrForbiden = &ErrResponse{HTTPStatusCode: http.StatusForbidden, StatusText: "You are not permitted"}
